@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Génesis & Edwin - Invitación de Boda</title>
+    <meta name="description" content="Te invitamos a celebrar nuestra boda el sábado 21 de noviembre de 2026.">
+    <!-- Vista previa al compartir el enlace (WhatsApp, Facebook, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Génesis & Edwin - Invitación de Boda">
+    <meta property="og:description" content="Te invitamos a celebrar nuestra boda el sábado 21 de noviembre de 2026.">
+    <meta property="og:url" content="https://invitavale.com/boda-genesis-edwin/">
+    <meta property="og:image" content="https://invitavale.com/boda-genesis-edwin/foto0.jpg">
+    <meta property="og:locale" content="es_DO">
+    <link rel="preload" as="image" href="foto0.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.youtube.com">
+    <link rel="preconnect" href="https://www.google.com">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CCSB.css?v=19">
+        <style>
+        /* Ajuste temporal: mantener altura visible sin tocar el attachment */
+        @media (min-width: 1025px) {
+            .hero-section {
+                background-image: url('foto0.jpg') !important;
+            }
+        }
+
+        /* Icono animado de Celebración: las copas hacen un leve "choque"
+           (chin-chin) de forma continua, con un pequeño destello de brillo. */
+        .bowtie-img { width: 120px; height: auto; max-width: none; object-fit: contain; }
+        .rsvp-container .whatsapp-icon { padding: 0.6rem !important; }
+        .rsvp-container .whatsapp-icon svg { width: 100%; height: 100%; }
+        /* Portada con la tipografía y el color de la invitación de referencia */
+        .hero-text .names {
+            font-family: 'Allura', 'Great Vibes', cursive !important;
+            color: #9C7021 !important;
+            font-weight: 400 !important;
+            font-size: clamp(3.8rem, 13vw, 6.8rem) !important;
+            line-height: 1.1 !important;
+        }
+        /* Solo texto, con una sombra suave para que se lea sobre la foto */
+        .hero-text .names, .hero-text .ampersand, .hero-text .quote {
+            text-shadow: 0 1px 2px rgba(40, 25, 10, 0.55), 0 2px 12px rgba(40, 25, 10, 0.45);
+        }
+        .hero-text .ampersand {
+            font-family: 'Cormorant Garamond', 'Playfair Display', serif !important;
+            font-style: italic;
+            color: #9C7021 !important;
+            font-size: 0.42em;
+            display: block;
+            line-height: 1;
+            margin: -0.1em 0 -0.05em;
+        }
+        .hero-text .quote {
+            font-family: 'Cormorant Garamond', 'Playfair Display', serif !important;
+            color: #9C7021 !important;
+            font-weight: 600 !important;
+            font-size: 1.35rem !important;
+        }
+        .hero-text .quote::before, .hero-text .quote::after { color: #9C7021 !important; font-family: 'Cormorant Garamond', serif !important; }
+        .hero-text .quote-cite {
+            font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+            color: #9C7021;
+            font-size: 0.95rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-top: 2.6rem;
+            text-shadow: 0 1px 2px rgba(40, 25, 10, 0.55), 0 2px 12px rgba(40, 25, 10, 0.45);
+        }
+        /* Aparición sutil al hacer scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+            transition-delay: var(--reveal-delay, 0ms);
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+        /* Solo queda la Ceremonia: tarjeta centrada y de ancho moderado */
+        .events-container { max-width: 640px !important; grid-template-columns: 1fr !important; }
+        /* Legibilidad de la portada: sombra oscura suave detrás del texto (sin recuadros) */
+        .hero-overlay {
+            background: radial-gradient(ellipse 90% 50% at 50% 62%, rgba(18, 11, 4, 0.72) 0%, rgba(18, 11, 4, 0.55) 55%, rgba(18, 11, 4, 0) 100%) !important;
+        }
+        .hero-text .names, .hero-text .ampersand, .hero-text .quote, .hero-text .quote-cite {
+            color: #D2AA55 !important;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55) !important;
+        }
+        .hero-text .quote { font-weight: 700 !important; }
+        /* Texto de la portada un poco más abajo para no tapar la cara */
+        .hero-content { transform: translateY(10vh); }
+        /* Verso y cita más legibles sobre el vestido */
+        .hero-text .quote, .hero-text .quote-cite {
+            color: #E2C07A !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.55) !important;
+        }
+        .hero-text .quote-cite { font-weight: 700; font-size: 1.05rem; }
+        /* Los enlaces con estilo de botón se ven exactamente igual que los botones originales */
+        a.btn-wedding { text-decoration: none; }
+        .btn-wedding { font-family: Arial, Helvetica, sans-serif !important; line-height: normal !important; }
+        /* Texto secundario un poco más grande */
+        .section-subtitle, .event-details p, .quote, .welcome-note, .footer-content p { font-size: 16px !important; }
+        .event-address, .footer-date { font-size: 14px !important; }
+        .event-punctuality { font-size: 14.5px !important; }
+        .modal-text-dark { font-size: 16.5px !important; }
+        .guest-subtitle, .guest-greeting { font-size: 15.5px !important; }
+        .countdown-label { font-size: 9px !important; }
+        .rsvp-phone { color: inherit; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+        .toast-icon-img {
+            width: 110px;
+            height: auto;
+            max-width: 100%;
+            object-fit: contain;
+            transform-box: fill-box;
+            transform-origin: 50% 20%;
+            animation: toast-clink 2.4s ease-in-out infinite;
+            filter: drop-shadow(0 2px 3px rgba(83, 64, 45, 0.25));
+        }
+
+        @keyframes toast-clink {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            8%  { transform: rotate(-6deg) scale(1.02); }
+            16% { transform: rotate(5deg) scale(1.05); }
+            24% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-center">
+        <!-- Modal de Bienvenida -->
+        <div id="welcomeModal" class="modal-overlay">
+            <div class="welcome-hero">
+                <h1 class="welcome-title welcome-title-sm">Bienvenidos a la<br/>invitación de<br/>Génesis &amp; Edwin</h1>
+                <p class="welcome-note">La música de fondo es parte de la experiencia</p>
+                <div class="welcome-actions">
+                    <button id="enterWithMusic" class="btn-gold" onclick="enterWithMusicClick()" disabled><span id="enterWithMusicLabel">Cargando música...</span></button>
+                    <button id="enterWithoutMusic" class="btn-gold-outline" onclick="enterWithoutMusicClick()">Ingresar sin música</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reproductor de música -->
+        <div id="musicPlayer" class="music-player" style="display: none;">
+            <button id="musicToggle" class="music-button modern-icon" title="Reproducir/Pausar música">
+                <svg id="volumeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="#53402D" stroke="#fff" stroke-width="1"></polygon>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.08" stroke="#53402D" stroke-width="2"></path>
+                    <circle cx="6.5" cy="12" r="1" fill="#A3AD82"/>
+                </svg>
+            </button>
+            <div id="youtube-player" style="position: absolute; top: -9999px; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none;"></div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <img class="hero-bg" src="foto0.jpg" alt="Portada boda Génesis y Edwin">
+            <div class="hero-overlay"></div>
+            <div class="top-garland">
+                <img src="separador-flores.png" alt="">
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="date date-hidden" aria-hidden="true">21.11.2026</div>
+                    <h1 class="names">Génesis<span class="ampersand">&amp;</span>Edwin</h1>
+                    <blockquote class="quote">
+                        Mejor son dos que uno, porque<br />
+                        obtienen más fruto de su esfuerzo
+                    </blockquote>
+                    <p class="quote-cite">Eclesiastés 4:9</p>
+                    <div class="scroll-indicator">
+                        <div class="scroll-mouse">
+                            <div class="scroll-wheel"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+        <div class="section-divider">
+            <img src="separador-flores.png" alt="">
+        </div>
+        <!-- Countdown -->
+        <section class="countdown-section">
+            <div id="guestSection" class="guest-section" style="display:none;">
+                <div id="guestBadge" class="guest-badge">0</div>
+                <h2 class="guest-title">¡Bienvenidos!</h2>
+                <p id="guestSubtitle" class="guest-subtitle" style="display:none;"></p>
+                <div id="guestGreeting" class="guest-greeting"></div>
+            </div>
+            <h2 class="section-title">Falta</h2>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">DÍAS</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">HORAS</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">MINUTOS</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">SEGUNDOS</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ceremony & Celebration -->
+        <div class="section-divider">
+            <img src="separador-flores.png" alt="">
+        </div>
+        <section class="events-section">
+            <div class="events-container">
+                <!-- Ceremony -->
+                <div class="event-card">
+                    <div class="event-icon modern-icon ceremonia-icon">
+                        <svg width="110" height="110" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <g class="ceremonia-rings">
+                                <circle cx="24" cy="40" r="16" fill="none" stroke="#53402D" stroke-width="3.5"/>
+                                <circle cx="40" cy="40" r="16" fill="none" stroke="#53402D" stroke-width="3.5"/>
+                                <path d="M16 12 L20 6 L28 6 L32 12 L24 22 Z" fill="none" stroke="#53402D" stroke-width="2.2" stroke-linejoin="round"/>
+                                <path d="M20 6 L24 12 L28 6 M16 12 L32 12" fill="none" stroke="#53402D" stroke-width="1.6" stroke-linejoin="round"/>
+                                <path d="M19 21 L16.5 27" stroke="#53402D" stroke-width="2.2" stroke-linecap="round"/>
+                                <path d="M29 21 L31.5 27" stroke="#53402D" stroke-width="2.2" stroke-linecap="round"/>
+                            </g>
+                            <g class="ceremonia-sparkle">
+                                <path d="M35 4 L36.4 8 L40.4 9.4 L36.4 10.8 L35 14.8 L33.6 10.8 L29.6 9.4 L33.6 8 Z" fill="#53402D"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <h3 class="event-title">Ceremonia</h3>
+                    <div class="event-details">
+                        <h4>Día</h4>
+                        <p>Sábado 21 de Noviembre, 2026 - 4:30 p. m.</p>
+                        <p class="event-punctuality">Por favor ser puntual</p>
+                    </div>
+                    <div class="event-details">
+                        <h4>Lugar</h4>
+                        <p>Atracciones El Lago</p>
+                        <p class="event-address">Avenida Anacaona #24, Santo Domingo, 11108</p>
+                    </div>
+                    <a class="btn-wedding" href="https://maps.app.goo.gl/AdGanfp5yVJFtBDb9" target="_blank" rel="noopener">¿Cómo llegar?</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RSVP -->
+        <div class="section-divider">
+            <img src="separador-flores.png" alt="">
+        </div>
+        <section class="rsvp-section">
+            <div class="rsvp-container">
+                <h2 class="section-title">Confirma tu Asistencia</h2>
+                <p class="section-subtitle">Por favor confirma tu asistencia antes del 31 de octubre de 2026.</p>
+                
+                <div class="whatsapp-icon modern-icon">
+                    <svg width="80" height="80" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="WhatsApp">
+                        <path d="M24 5C13.5 5 5 13.4 5 23.8c0 3.5 1 6.8 2.7 9.6L5 43l9.9-2.6c2.7 1.5 5.8 2.3 9.1 2.3 10.5 0 19-8.4 19-18.8S34.5 5 24 5z" fill="#53402D"/>
+                        <path d="M24 8.6c-8.5 0-15.4 6.8-15.4 15.2 0 3.1.9 5.9 2.5 8.3l-1.6 5.7 5.9-1.5c2.3 1.4 5 2.2 7.9 2.2 8.5 0 15.4-6.8 15.4-15.2S32.5 8.6 24 8.6z" fill="#FFFFFF"/>
+                        <path d="M18.6 15.8c-.4-.9-.8-.9-1.2-.9h-1c-.4 0-.9.1-1.4.7-.5.5-1.8 1.8-1.8 4.3s1.9 5 2.1 5.3c.3.3 3.6 5.7 8.9 7.8 4.4 1.7 5.3 1.4 6.2 1.3 1-.1 3.1-1.3 3.5-2.5.4-1.2.4-2.3.3-2.5-.1-.2-.5-.4-1-.6-.5-.3-3.1-1.5-3.6-1.7-.5-.2-.8-.3-1.2.3-.4.5-1.4 1.7-1.7 2-.3.3-.6.4-1.1.1-.5-.3-2.2-.8-4.2-2.6-1.6-1.4-2.6-3.1-2.9-3.6-.3-.5 0-.8.2-1.1.2-.2.5-.6.8-.9.3-.3.4-.5.5-.9.2-.3.1-.7 0-.9-.1-.3-1.1-2.8-1.6-3.7z" fill="#53402D"/>
+                    </svg>
+                </div>
+
+                <a class="btn-wedding" href="https://wa.me/18097622343?text=%C2%A1Hola%21%20Quiero%20confirmar%20mi%20asistencia%20a%20la%20boda%20de%20G%C3%A9nesis%20%26%20Edwin%20el%20s%C3%A1bado%2021%20de%20noviembre%20de%202026.%20%F0%9F%92%8D" target="_blank" rel="noopener">Confirmar Asistencia</a>
+            </div>
+        </section>
+
+        <!-- Party Information -->
+        <div class="section-divider">
+            <img src="separador-flores.png" alt="">
+        </div>
+        <section class="party-section">
+            <div class="party-container">
+                <h2 class="section-title">Detalles</h2>
+                <p class="section-subtitle">Hagamos juntos una fiesta épica. Aquí algunos detalles a tener en cuenta.</p>
+
+                <div class="party-grid">
+                    <div class="party-card">
+                        <div class="party-icon modern-icon bowtie-icon">
+                            <img src="corbatin.png" alt="Corbatín" class="bowtie-img">
+                        </div>
+                        <h3>Código de Vestimenta</h3>
+                        <button class="btn-wedding" onclick="showDressCode()">Ver más</button>
+                    </div>
+
+                    <div class="party-card">
+                        <div class="party-icon modern-icon">
+                            <svg width="110" height="110" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="26" fill="none" stroke="#53402D" stroke-width="4"/>
+                                <circle cx="32" cy="23" r="6" fill="#53402D"/>
+                                <path d="M20 45 C20 35 44 35 44 45" fill="#53402D"/>
+                                <line x1="11" y1="53" x2="53" y2="11" stroke="#53402D" stroke-width="4" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Tips y Notas</h3>
+                        <button class="btn-wedding" onclick="showTips()">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gifts -->
+        <div class="section-divider">
+            <img src="separador-flores.png" alt="">
+        </div>
+        <section class="gifts-section">
+            <div class="gifts-container">
+                <h2 class="section-title">Mesa de Regalos</h2>
+                <p class="section-subtitle">Su presencia es el regalo más importante para nosotros. Si desean tener un detalle con nosotros en este día tan especial, hemos preparado la siguiente cuenta para contribuir con el inicio de nuestro nuevo hogar.</p>
+                
+                <div class="gift-icon modern-icon">
+                    <svg width="110" height="110" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="26" width="44" height="28" rx="3" fill="#53402D"/>
+                    <rect x="6" y="16" width="52" height="12" rx="3" fill="#53402D"/>
+                    <rect x="29" y="16" width="6" height="38" fill="#FFFFFF"/>
+                    <path d="M32 16 C 22 16 18 6 25 4 C 31 3 32 10 32 16 Z" fill="#53402D"/>
+                    <path d="M32 16 C 42 16 46 6 39 4 C 33 3 32 10 32 16 Z" fill="#53402D"/>
+                </svg>
+                </div>
+
+                <button class="btn-wedding" onclick="showGifts()">Ver más</button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="section-divider">
+            <img src="separador-flores.png" alt="">
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Con amor,</p>
+                <h3>Génesis &amp; Edwin</h3>
+                <p class="footer-date">21 de Noviembre, 2026</p>
+            </div>
+        </footer>
+        </div>
+
+        <!-- Modal Dress Code -->
+        <div id="dresscodeModal" class="modal-overlay" onclick="closeDressCodeModal(event)">
+            <div class="dresscode-modal" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeDressCodeModal()" aria-label="Cerrar">&times;</button>
+                <h2 class="modal-title-dark">Código de Vestimenta</h2>
+                <p class="modal-text-dark"><strong>Formal</strong></p>
+                <p class="modal-text-dark">Se sugiere a las damas vestir con vestidos largos y elegantes.</p>
+                <p class="modal-text-dark">Agradecemos evitar los tonos blanco, beige y/o champán, reservados exclusivamente para los novios.</p>
+                <div class="dresscode-colors">
+                    <span class="color-dot" style="background:#ffffff;" title="No blanco"></span>
+                    <span class="color-dot" style="background:#e8dcc4;" title="No beige"></span>
+                    <span class="color-dot" style="background:#f0e2b6;" title="No champán"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Tips y Notas -->
+        <div id="tipsModal" class="modal-overlay" onclick="closeTipsModal(event)">
+            <div class="dresscode-modal" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeTipsModal()" aria-label="Cerrar">&times;</button>
+                <h2 class="modal-title-dark">Tips y Notas</h2>
+                <p class="modal-text-dark">Solo para adultos.</p>
+                <p class="modal-text-dark">Hemos decidido celebrar nuestra boda solo entre adultos. Agradecemos de antemano su comprensión y esperamos que puedan celebrar junto a nosotros esta noche tan especial.</p>
+            </div>
+        </div>
+
+        <!-- Modal Regalo -->
+        <div id="giftModal" class="modal-overlay" onclick="closeGiftModal(event)">
+            <div class="dresscode-modal" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeGiftModal()" aria-label="Cerrar">&times;</button>
+                <h2 class="modal-title-dark">Mesa de Regalos</h2>
+                <p class="modal-text-dark">Poder celebrar contigo es nuestro mejor regalo.</p>
+                <p class="modal-text-dark">Pero si deseas hacernos un obsequio, puedes considerar una contribución a través de esta cuenta:</p>
+                <div class="gift-account">
+                    <div class="gift-bank">Banreservas · Ahorros</div>
+                    <div class="gift-holder">Génesis Ramírez</div>
+                    <div class="gift-number-row">
+                        <span class="gift-number">9603115013</span>
+                        <button class="gift-copy" onclick="copyAccount('9603115013')" aria-label="Copiar número de cuenta">Copiar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast notification -->
+        <div id="toast" class="toast">
+            <div id="toastContent"></div>
+        </div>
+
+        <script>
+        (function() {
+            try {
+                if ('caches' in window) {
+                    caches.keys().then(keys => keys.forEach(k => caches.delete(k))).catch(() => {});
+                }
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister())).catch(() => {});
+                }
+            } catch(e) {}
+        })();
+        </script>
+        <script src="JAVAB.js?v=19" defer></script>
+</body>
+</html>
