@@ -1721,3 +1721,7 @@ body,
 .gift-number{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-size:1.15rem;font-weight:600;letter-spacing:.04em;color:#fff;font-variant-numeric:tabular-nums}
 .gift-copy{background:transparent;border:1px solid hsl(var(--gold));color:#fff;border-radius:20px;padding:.3rem .85rem;font-size:.78rem;cursor:pointer}
 .gift-copy:active{transform:scale(.97)}
+
+/* Evita que el iPhone convierta los números en enlaces azules */
+.gift-number,.gift-number a,.gift-id,.gift-id a,.gift-modal a[href^="tel"],[class*="gift"] a[href^="tel"]{color:inherit!important;text-decoration:none!important;-webkit-text-fill-color:currentColor}
+.gift-account .gift-number{color:#ffffff!important;-webkit-text-fill-color:#ffffff;font-size:1.2rem}
